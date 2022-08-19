@@ -6,17 +6,21 @@ import { HeaderComponent } from './header/header.component';
 import { AbruptValleyDownloadComponent } from './abrupt-valley-download/abrupt-valley-download.component';
 import {AppRoutingModule} from "./route/route.module";
 import { AbruptValleyDocumentationComponent } from './abrupt-valley-documentation/abrupt-valley-documentation.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AbruptValleyDownloadComponent,
-    AbruptValleyDocumentationComponent
+    AbruptValleyDocumentationComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,9 @@
+<div>
+  <h2>Leaderboard: </h2>
+  <ul>
+    <li *ngFor="let player of players">{{player.username}} -
+      {{player.rankedWins}} Wins - {{player.rankedLoses}} -
+      {{player.leaguePoints}}
+    </li>
+  </ul>
+</div>
