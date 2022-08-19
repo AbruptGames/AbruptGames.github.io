@@ -1,0 +1,13 @@
+<div class="body">
+  <img class="splash-art" src="SplashArtAbruptValley.png"/>
+  <div class="title-box">
+    <div class="title">Abrupt Valley</div>
+    <div class="download-button">
+      <img alt="windows" (click)="selectOs(OS.Windows)" class="icon" src="{{getIconUrl(OS.Windows)}}" height="30px"/>
+      <img alt="mac" (click)="selectOs(OS.MacOs)" class="icon" src="{{getIconUrl(OS.MacOs)}}" height="30px"/>
+      <img alt="linux" (click)="selectOs(OS.Linux)" class="icon" src="{{getIconUrl(OS.Linux)}}" height="30px"/>
+      <button class="button">Download <img alt="windows" class="icon" src="{{getIconUrl(selectedOS)}}" width="30px"/></button>
+    </div>
+    <button class="documentation-button" routerLink="/documentation">Go to documentation</button>
+  </div>
+</div>

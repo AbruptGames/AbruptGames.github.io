@@ -1,0 +1,45 @@
+
+.splash-art {
+  width: 100%;
+}
+
+.title-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 300px;
+  position: absolute;
+  padding: 30px;
+  top: 250px;
+  left: 50px;
+  border: solid grey 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-weight: bolder;
+  font-size: 48px;
+  justify-content: center;
+  padding-bottom: 24px;
+}
+
+.download-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.button {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  width: 160px;
+  justify-content: center;
+}
+
+.documentation-button {
+  height: 30px;
+  width: 100%;
+}
