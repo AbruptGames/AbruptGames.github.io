@@ -5,7 +5,7 @@ interface Player {
   id: String,
   username: String,
   rankedWins: number,
-  rankedLoses: number,
+  rankedLosses: number,
   leaguePoints: number
 }
 

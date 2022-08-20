@@ -1,9 +1,16 @@
 <div>
-  <h2>Leaderboard: </h2>
-  <ul>
-    <li *ngFor="let player of players">{{player.username}} -
-      {{player.rankedWins}} Wins - {{player.rankedLoses}} -
-      {{player.leaguePoints}}
-    </li>
-  </ul>
+  <div class="leaderboard-box">
+    <div class="line leaderboard-header">
+      <div class="info" style="flex:5">Username</div>
+      <div class="info" style="flex:3">Wins</div>
+      <div class="info" style="flex:3">Losses</div>
+      <div class="info" style="flex:2">ELO</div>
+    </div>
+    <div class="line" *ngFor="let player of players">
+      <div class="info" style="flex:5">{{player.username}}</div>
+      <div class="info" style="flex:3">{{player.rankedWins}}</div>
+      <div class="info" style="flex:3">{{player.rankedLosses}}</div>
+      <div class="info" style="flex:2">{{player.leaguePoints}}</div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,21 @@
+.leaderboard-box {
+  background: grey;
+  margin: 50px;
+  justify-content: center;
+}
+
+.leaderboard-header {
+  font-weight: bold;
+  background: #444444;
+  color: white;
+}
+
+.line {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  text-align: center;
+}
