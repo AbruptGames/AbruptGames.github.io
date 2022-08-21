@@ -1,16 +1,19 @@
-<div>
+<div class="leaderboard-main">
   <div class="leaderboard-box">
+    <div class="title">Leaderboard</div>
     <div class="line leaderboard-header">
-      <div class="info" style="flex:5">Username</div>
-      <div class="info" style="flex:3">Wins</div>
-      <div class="info" style="flex:3">Losses</div>
-      <div class="info" style="flex:2">ELO</div>
+      <div class="info">#</div>
+      <div class="info username-column">Username</div>
+      <div class="info">Elo</div>
+      <div class="info win-lose-column">Wins</div>
+      <div class="info win-lose-column">Losses</div>
     </div>
-    <div class="line" *ngFor="let player of players">
-      <div class="info" style="flex:5">{{player.username}}</div>
-      <div class="info" style="flex:3">{{player.rankedWins}}</div>
-      <div class="info" style="flex:3">{{player.rankedLosses}}</div>
-      <div class="info" style="flex:2">{{player.elo}}</div>
+    <div class="line" *ngFor="let player of players;let indexOfElement=index;">
+      <div class="info">{{indexOfElement + 1}}</div>
+      <div class="info username-column">{{player.username}}<img class="crown" *ngIf="indexOfElement == 0" src="../assets/crown.png"></div>
+      <div class="info">{{player.elo}}</div>
+      <div class="info win-lose-column">{{player.rankedWins}}</div>
+      <div class="info win-lose-column">{{player.rankedLosses}}</div>
     </div>
   </div>
 </div>

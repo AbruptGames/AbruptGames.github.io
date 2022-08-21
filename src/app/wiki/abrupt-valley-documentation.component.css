@@ -46,6 +46,8 @@
   padding-bottom: 50px;
   padding-left: 300px;
   padding-right: 300px;
+  overflow: auto;
+  height: calc(100vh - 60px);
 }
 
 * {
