@@ -24,7 +24,7 @@ export class LeaderboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get<Player[]>(this.baseUrl + "leaderboard").subscribe(data => {
-      this.players = data;
+      this.players = data.concat(data).concat(data).concat(data).concat(data).concat(data).concat(data).concat(data).concat(data);
       console.log("fetched players: ", this.players);
     });
   }

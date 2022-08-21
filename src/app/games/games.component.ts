@@ -29,7 +29,7 @@ export class GamesComponent implements OnInit {
       console.log("fetched games: ", this.games);
     });
 
-    this.http.get<GameSummary[]>(this.baseUrl + "game-history").subscribe(data => {
+    this.http.get<GameSummary[]>(this.baseUrl + "current-games").subscribe(data => {
       this.history = data;
       console.log("fetched history games: ", this.history);
     });
