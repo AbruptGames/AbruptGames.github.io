@@ -3,60 +3,102 @@
     <a class="left-panel-link" href="/wiki#introduction">Introduction</a>
     <a class="left-panel-link" href="/wiki#ville">Ville</a>
     <a class="left-panel-sub-link" href="/wiki#interface">Interface</a>
+    <a class="left-panel-sub-link" href="/wiki#ressources">Ressources</a>
     <a class="left-panel-sub-link" href="/wiki#construction">Construction</a>
     <a class="left-panel-sub-link" href="/wiki#recherche">Recherche</a>
     <a class="left-panel-link" href="/wiki#bataille">Bataille</a>
+    <a class="left-panel-link" href="/wiki#bien-debuter">Bien débuter</a>
   </div>
   <div class="wiki-body">
     <h1>Abrupt Valley Wiki</h1>
     <h2 id="introduction">Introduction</h2>
     <p>
-      Abrupt Valley est un jeu de stratégie en 1vs1 découpé en 2 phases, une de construction de ville et l’autre
+      Abrupt Valley est un jeu de stratégie en 1vs1 divisé en 2 phases, une de construction de ville et l’autre
       d'affrontement.<br>
       Dans la phase de construction de ville, vous avez 45 secondes pour positionner vos bâtiments de ressources et
       d'unités mais aussi les améliorer pour se préparer au mieux pour la phase d'affrontement.<br>
       Durant la phase d’affrontement vos unités affrontent automatiquement l’armée adverse dans une zone de bataille
       jusqu’à ce qu’il n’y est qu’un seul vainqueur.<br>
-      Le premier joueur à remporter 4 batailles est déclaré vainqueur de la guerre et la partie se finit.<br>
+      Le premier joueur à remporter 5 batailles est déclaré vainqueur de la guerre et la partie se termine.<br>
     </p>
     <h2 id="ville">Construction de ville</h2>
     <h3 id="interface">Interface</h3>
-    <p>
-      Durant la construction de votre ville vous avez un menu en bas de votre écran séparé en 3 zones, la première zone
-      permet de changer de catégorie de bâtiment, collecte de ressources, armes et armures (pas encore implémentée),
-      la deuxième zone contient les différents bâtiments de la catégorie sélectionnée avec sous chaque bâtiment son prix
-      en or et dans le coin supérieur droit la ressource nécessaire pour le construire si besoin et la 3ème zone est
-      composée d’un bouton permettant d’être prêt en avance pour partir au combat (le combat se déclenche avant les 45s
-      si les deux joueurs sont prêts).<br>
-      Sur la partie gauche de votre écran vous pourrez voir votre stock de ressources disponibles.<br>
-      Et pour finir sur la partie haute de votre écran vous aurez le chronomètre vous indiquant le temps restant avant
-      la prochaine phase.<br>
-    </p>
+    <div style="display:flex">
+      <p>
+        Durant la construction de votre ville vous avez un menu en bas de votre écran séparé en 3 zones, la première zone
+        permet de changer de catégorie de bâtiment, collecte de ressources, armes et armures (pas encore implémentée),
+        la deuxième zone contient les différents bâtiments de la catégorie sélectionnée avec sous chaque bâtiment son prix
+        en or et dans le coin supérieur droit la ressource nécessaire pour le construire si besoin et la 3ème zone est
+        composée d’un bouton permettant d’être prêt en avance pour partir au combat (le combat se déclenche avant les 45s
+        si les deux joueurs sont prêts).<br>
+        Sur la partie gauche de votre écran vous pourrez voir votre stock de ressources disponibles.<br>
+        Le chronomètre en haut de l'ecran indique le temps restant avant la prochaine phase.<br>
+      </p>
+      <div>
+        <img style="padding-left: 50px; height: 120px" src="assets/screenshots/build-sword.png">
+      </div>
+    </div>
+    <h3 id="ressources">Ressources</h3>
+    <div style="display:flex">
+      <div>
+        <img style="padding-right: 50px; height: 120px" src="assets/screenshots/resources.png">
+        <img style="padding-right: 50px; margin-top: 25px; height: 120px" src="assets/screenshots/resources-with-building.png">
+      </div>
+      <p>
+        Il y a 2 types de ressources: L'or (jaune), servant a la construction des batiments, et les productions (le bois
+        (marron), le fer (gris), la poudre a canon (noir) et le rubis (rouge)). A la différence des autres ressources,
+        l’or peut être stocké et accumulé à chaque tour. Chaque joueur gagne 50 or par tour + 40 or par mine d’or construite.
+        <br/><br/>
+        Les autres bâtiments de ressource donnent 2 unités de leur ressources au moment de leur construction (et non a
+        chaque tour. Chacune de ces ressources permet l’achat d’un bâtiment ou d’une recherches. Le bois permet la
+        construction de bâtiments militaires, et les autres ressources (fer,poudre a canon, rubis) permettent de débloquer
+        des recherches majeures.
+      </p>
+    </div>
     <h3 id="construction">Construction</h3>
     <p>
       Lorsque vous cliquez sur un bâtiment il se positionne à un emplacement valide sur la grille de votre ville et vous
       pourrez le bouger en cliquant sur une case tant que l’emplacement est valide, une fois que sa position vous
       convient vous pourrez cliquer sur le bouton valider pour construire le bâtiment, si vous ne voulez plus
       positionner ce bâtiment vous pouvez cliquer sur le bouton annuler.<br>
-      Une fois un bâtiment de collecte de ressource posé vous obtiendrait directement les ressources sauf pour la mine
+      Une fois un bâtiment de collecte de ressource posé vous obtiendrez directement les ressources sauf pour la mine
       d’or qui vous permet d’obtenir une quantité d’or à chaque début de tour de construction de ville. Il en est de
       même pour les bâtiments d’unités qui ajoutent à votre armée instantanément les unités produites par le bâtiment
       posé.<br>
     </p>
     <h3 id="recherche">Recherche</h3>
+    <img src="assets/screenshots/research.png" height="250" class="image">
     <p>
       Si vous souhaitez améliorer les unités sortant d’un bâtiment vous pouvez cliquer sur celui-ci et un menu de
-      recherche apparaîtra, pour débloquer une recherche il faut obligatoirement avoir la recherche précedente déjà
-      acheter, et lorsque que vous débloquer une recherche majeure cela bloque les autres recherches majeures de ce
-      bâtiment.<br>
+      recherche apparaîtra, pour débloquer une recherche il faut obligatoirement avoir la recherche précédente déjà
+      achetée, et lorsque que vous débloquez une recherche majeure (qui coute une ressource) cela bloque les autres
+      recherches majeures de ce bâtiment.
+      <br>
     </p>
 
-    <h2 id="p3">Bataille</h2>
+    <h2 id="bataille">Bataille</h2>
     <p>
       Une bataille se déroule automatiquement, vos unités produites lors de votre précédente phase de construction de
       ville se positionne automatiquement sur le champ de bataille en fonction de leurs points de vie et leur distance
       d’attaque. Vous pouvez observer les différentes statistiques de chaque unité sur le champ de bataille en cliquant
       simplement sur la case sur laquelle elle est.<br>
     </p>
+
+    <h2 id="bien-debuter">Conseils pour bien débuter</h2>
+    <div>
+      <p>Certaines erreurs au début de partie peuvent rendre votre partie très compliquée dès le premier tour, voici
+        quelques conseils pour débuter:</p>
+      <ul style="padding-left: 20px;">
+        <li>En début de partie il est utile de construire une voire plusieurs mines d’or pour commencer dès maintenant
+          à accumuler de l’or.</li>
+        <li>Le positionnement des bâtiments est important, il faut faire attention à ne pas recouvrir trop de ressources
+          qui pourront être utiles plus tard dans la partie.</li>
+        <li>Le bois est une ressource précieuse car sans lui il est impossible de construire des unités, il est donc
+          important de faire un ou plusieurs camp de bûcherons dès le premier tour.
+        </li>
+        <li>N’oubliez pas d'améliorer vos unités !</li>
+        <li>N’hésitez pas à vous entraîner contre l’IA pour apprendre les bases avant d’affronter d'autres joueurs.</li>
+      </ul>
+    </div>
   </div>
 </div>

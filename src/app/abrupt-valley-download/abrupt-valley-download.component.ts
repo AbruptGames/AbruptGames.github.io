@@ -51,11 +51,11 @@ export class AbruptValleyDownloadComponent implements OnInit {
   public getDownloadLink() {
     switch (this.selectedOS) {
       case OS.Windows:
-        return "https://www.shareicon.net/data/256x256/2015/08/10/82776_windows_4096x4096.png";
+        return "../assets/";
       case OS.MacOs:
-        return "";
+        return "../assets/";
       case OS.Linux:
-        return "";
+        return "../assets/AbruptValley-0.1.0.app.zip";
     }
   }
 }

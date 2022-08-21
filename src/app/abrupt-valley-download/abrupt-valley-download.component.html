@@ -6,7 +6,7 @@
       <img alt="windows" (click)="selectOs(OS.Windows)" class="icon" src="../assets/windows.png"/>
       <img alt="mac" (click)="selectOs(OS.MacOs)" class="icon" src="../assets/mac.png"/>
       <img alt="linux" (click)="selectOs(OS.Linux)" class="icon" src="../assets/linux.png"/>
-      <button class="button">Download <img alt="windows" class="button-icon" src="../assets/{{getIconName(selectedOS)}}"></button>
+      <a [href]="getDownloadLink()" download class="button">Download <img alt="windows" class="button-icon" src="../assets/{{getIconName(selectedOS)}}"></a>
     </div>
     <button class="wiki-button" routerLink="/wiki">Go to wiki</button>
   </div>
