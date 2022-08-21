@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AbruptValleyDownloadComponent } from './abrupt-valley-download/abrupt-valley-download.component';
 import {AppRoutingModule} from "./route/route.module";
-import { AbruptValleyDocumentationComponent } from './abrupt-valley-documentation/abrupt-valley-documentation.component';
+import { AbruptValleyDocumentationComponent } from './wiki/abrupt-valley-documentation.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import {HttpClientModule} from "@angular/common/http";
+import { GamesComponent } from './games/games.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpClientModule} from "@angular/common/http";
     HeaderComponent,
     AbruptValleyDownloadComponent,
     AbruptValleyDocumentationComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,

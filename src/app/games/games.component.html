@@ -1,0 +1,22 @@
+<div class="body">
+  <div class="game-list">
+    <h2>Current Games</h2>
+    <div class="game" *ngFor="let game of games">
+      <span class="game-info player-name blue">{{game.BlueName}}</span>
+      <span class="game-info">vs</span>
+      <span class="game-info player-name red">{{game.RedName}}</span>
+      <span class="game-info">{{game.BlueWins}}</span>
+      <span class="game-info">{{game.RedWins}}</span>
+    </div>
+    <hr/>
+    <br/>
+    <h2>History</h2>
+    <div class="game" *ngFor="let game of history">
+      <span class="game-info player-name blue">{{game.BlueName}}</span>
+      <span class="game-info">vs</span>
+      <span class="game-info player-name red">{{game.RedName}}</span>
+      <span class="game-info">{{game.BlueWins}}</span>
+      <span class="game-info">{{game.RedWins}}</span>
+    </div>
+  </div>
+</div>

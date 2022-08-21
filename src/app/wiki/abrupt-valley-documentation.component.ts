@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-abrupt-valley-documentation',
+  selector: 'abrupt-valley-documentation.component',
   templateUrl: './abrupt-valley-documentation.component.html',
   styleUrls: ['./abrupt-valley-documentation.component.css']
 })

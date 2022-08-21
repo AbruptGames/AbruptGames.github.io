@@ -6,7 +6,7 @@ interface Player {
   username: String,
   rankedWins: number,
   rankedLosses: number,
-  leaguePoints: number
+  elo: number
 }
 
 @Component({
@@ -24,8 +24,8 @@ export class LeaderboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get<Player[]>(this.baseUrl + "leaderboard").subscribe(data => {
-      this.players = data
-      console.log(this.players);
+      this.players = data;
+      console.log("fetched players: ", this.players);
     });
   }
 

@@ -1,0 +1,80 @@
+.wiki-main {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-panel {
+  background-color: #2B3035;
+  position: fixed;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  height: calc(100vh - 60px);
+  border-right: solid #495057 1px;
+}
+
+.left-panel-link, .left-panel-sub-link {
+  color: #E9ECEF;
+  padding: 10px 10px 10px 40px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.left-panel-link {
+  font-weight: 650;
+  font-size: 1.5em;
+}
+
+.left-panel-sub-link {
+  padding-left: 80px;
+  font-weight: 550;
+  font-size: 1.25em;
+}
+
+.left-panel-link:hover, .left-panel-sub-link:hover {
+  color: #d69f7e;
+  background-color: #495057;
+}
+
+.wiki-body {
+  flex: 1;
+  background-color: #343A40;
+  color: #DEE2E6;
+  margin-left: 300px;
+  padding-bottom: 50px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+* {
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-size: 2.8em;
+  font-weight: 800;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+h2 {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+h3 {
+  font-size: 1.6em;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+p {
+  color: #CED4DA;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
