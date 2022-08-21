@@ -2,21 +2,15 @@
   <div class="game-list">
     <h2>Current Games</h2>
     <div class="game" *ngFor="let game of games">
-      <span class="game-info player-name blue">{{game.BlueName}}</span>
-      <span class="game-info">vs</span>
-      <span class="game-info player-name red">{{game.RedName}}</span>
-      <span class="game-info">{{game.BlueWins}}</span>
-      <span class="game-info">{{game.RedWins}}</span>
+      <span class="game-info player-name blue">{{game.BlueName}}<img class="crown" *ngIf="game.BlueWins >= 5" src="../assets/crown.png"></span>
+      <span class="game-info">{{game.BlueWins}} - {{game.RedWins}}</span>
+      <span class="game-info player-name red">{{game.RedName}}<img class="crown" *ngIf="game.RedWins >= 5" src="../assets/crown.png"></span>
     </div>
-    <hr/>
-    <br/>
-    <h2>History</h2>
+    <h2 style="margin-top: 80px">History</h2>
     <div class="game" *ngFor="let game of history">
-      <span class="game-info player-name blue">{{game.BlueName}}</span>
-      <span class="game-info">vs</span>
-      <span class="game-info player-name red">{{game.RedName}}</span>
-      <span class="game-info">{{game.BlueWins}}</span>
-      <span class="game-info">{{game.RedWins}}</span>
+      <span class="game-info player-name blue">{{game.BlueName}}<img class="crown" *ngIf="game.BlueWins >= 5" src="../assets/crown.png"></span>
+      <span class="game-info">{{game.BlueWins}} - {{game.RedWins}}</span>
+      <span class="game-info player-name red">{{game.RedName}}<img class="crown" *ngIf="game.RedWins >= 5" src="../assets/crown.png"></span>
     </div>
   </div>
 </div>
