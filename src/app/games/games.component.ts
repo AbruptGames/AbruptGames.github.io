@@ -17,7 +17,7 @@ export class GamesComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "http://93.4.139.220:5000/";
+  private baseUrl = "http://13.38.232.70:5000/";
 
   public games: GameSummary[] = [];
   public history: GameSummary[] = [];

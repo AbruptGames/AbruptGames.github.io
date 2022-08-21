@@ -83,6 +83,7 @@ img {
   box-shadow: 0 5px 5px #212529;
   transition: 0.25s;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button:hover {

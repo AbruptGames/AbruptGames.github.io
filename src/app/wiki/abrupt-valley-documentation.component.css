@@ -42,10 +42,10 @@
   flex: 1;
   background-color: #343A40;
   color: #DEE2E6;
-  margin-left: 300px;
+  margin-left: 10vw;
   padding-bottom: 50px;
   padding-left: 300px;
-  padding-right: 300px;
+  padding-right: 10vw;
   overflow: auto;
   height: calc(100vh - 60px);
 }

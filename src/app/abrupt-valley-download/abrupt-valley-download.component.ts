@@ -51,11 +51,11 @@ export class AbruptValleyDownloadComponent implements OnInit {
   public getDownloadLink() {
     switch (this.selectedOS) {
       case OS.Windows:
-        return "../assets/";
+        return "../assets/downloads/AbruptValleyWindows.zip";
       case OS.MacOs:
-        return "../assets/";
+        return "../assets/downloads/AbruptValleyMac.zip";
       case OS.Linux:
-        return "../assets/AbruptValley-0.1.0.app.zip";
+        return "../assets/downloads/AbruptValleyLinux.zip";
     }
   }
 }
