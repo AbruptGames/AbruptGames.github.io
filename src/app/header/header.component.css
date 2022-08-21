@@ -1,6 +1,11 @@
 .header {
-  background: #444444;
+  background-color: #9c6644;
   height: 60px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
   margin-top: 0;
   display: flex;
   flex-direction: row;
@@ -8,12 +13,24 @@
 }
 
 .logo {
-  padding: 10px;
+  margin: 5px 5px 5px 20px;
+  height: 50px;
+  cursor: pointer;
 }
 
 .game-link {
+  letter-spacing: 3px;
+  text-transform: uppercase;
   padding-left: 60px;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1em;
   color: white;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+.game-link:hover {
+  text-decoration: underline #c38e70;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 20px;
 }

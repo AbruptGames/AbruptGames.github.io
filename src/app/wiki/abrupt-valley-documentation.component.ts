@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./abrupt-valley-documentation.component.css']
 })
 export class AbruptValleyDocumentationComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

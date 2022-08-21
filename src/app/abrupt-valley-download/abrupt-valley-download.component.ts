@@ -37,14 +37,14 @@ export class AbruptValleyDownloadComponent implements OnInit {
     this.selectedOS = selection;
   }
 
-  public getIconUrl(os: OS) {
+  public getIconName(os: OS) {
     switch (os) {
       case OS.Windows:
-        return "https://www.shareicon.net/data/256x256/2015/08/10/82776_windows_4096x4096.png";
+        return "windows.png";
       case OS.MacOs:
-        return "https://icons-for-free.com/download-icon-bxl+apple-1325051930531953651_256.ico";
+        return "mac.png";
       case OS.Linux:
-        return "https://icon-library.com/images/linux-icon-vector/linux-icon-vector-3.jpg";
+        return "linux.png";
     }
   }
 
