@@ -1,15 +1,15 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable, forwardRef } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { DeleteResult, Repository } from 'typeorm';
 import { Subscription } from './subscription.entity';
 import { validateOrReject } from 'class-validator';
-import { MailService } from './mail.service';
+import { EmailsService } from 'src/emails/emails.service';
 
 @Injectable()
 export class SubscriptionService {
     constructor(
         @InjectRepository(Subscription) private readonly subscriptionRepository: Repository<Subscription>,
-        private readonly mailService: MailService,
+        private readonly emailsService: EmailsService,
     ) {}
 
     async create(email: string, language: 'english' | 'french') {
@@ -17,7 +17,7 @@ export class SubscriptionService {
         subscription.email = email;
         subscription.language = language;
         await validateOrReject(subscription);
-        const output = await this.mailService.sendWelcomeEmail(email, language);
+        const output = await this.emailsService.sendWelcomeEmail(email, language);
         if (output.$metadata.httpStatusCode === 200) {
             return this.subscriptionRepository.save(subscription);
         } else {
@@ -25,8 +25,11 @@ export class SubscriptionService {
         }
     }
 
-    async delete(email: string): Promise<void> {
-        await this.subscriptionRepository.delete({ email });
+    async delete(email: string) {
+        const result: DeleteResult = await this.subscriptionRepository.delete({ email });
+        if (result.affected == 0) {
+            throw new Error(`No subscription found for email : ${email}`);
+        }
     }
 
     getAll(): Promise<Subscription[]> {
