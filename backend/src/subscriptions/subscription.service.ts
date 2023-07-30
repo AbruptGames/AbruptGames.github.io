@@ -12,18 +12,18 @@ export class SubscriptionService {
         private readonly emailsService: EmailsService,
     ) {}
 
-    async create(email: string, language: 'english' | 'french') {
-        const subscription = new Subscription();
-        subscription.email = email;
-        subscription.language = language;
-        await validateOrReject(subscription);
-        const output = await this.emailsService.sendWelcomeEmail(email, language);
-        if (output.$metadata.httpStatusCode === 200) {
-            return this.subscriptionRepository.save(subscription);
-        } else {
-            throw new Error(`Error when sending welcome email to : ${email}`);
-        }
-    }
+    // async create(email: string, language: 'english' | 'french') {
+    //     const subscription = new Subscription();
+    //     subscription.email = email;
+    //     subscription.language = language;
+    //     await validateOrReject(subscription);
+    //     const output = await this.emailsService.sendWelcomeEmail(email, language);
+    //     if (output.$metadata.httpStatusCode === 200) {
+    //         return this.subscriptionRepository.save(subscription);
+    //     } else {
+    //         throw new Error(`Error when sending welcome email to : ${email}`);
+    //     }
+    // }
 
     async delete(email: string) {
         const result: DeleteResult = await this.subscriptionRepository.delete({ email });

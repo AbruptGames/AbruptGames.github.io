@@ -7,20 +7,20 @@ export class AppController {
         private readonly subscriptionService: SubscriptionService
     ) {}
 
-    @Post("subscribe")
-    async create(@Body('email') email: string, @Body('language') language: 'french' | 'english') {
-        try {
-            return this.subscriptionService.create(email, language);
-        } catch (error) {
-            if (error.errno == 19) {
-                throw new HttpException(`${email} is already subscribed`, HttpStatus.CONFLICT);
-            }
-            throw error;
-        }
-    }
+    // @Post("subscribe")
+    // async create(@Body('email') email: string, @Body('language') language: 'french' | 'english') {
+    //     try {
+    //         return this.subscriptionService.create(email, language);
+    //     } catch (error) {
+    //         if (error.errno == 19) {
+    //             throw new HttpException(`${email} is already subscribed`, HttpStatus.CONFLICT);
+    //         }
+    //         throw error;
+    //     }
+    // }
 
     @Delete("subscribe")
-    async delete(@Res() res: Response, @Body('email') email: string) {
+    async delete(@Body('email') email: string) {
         console.log("unsubscribing " + email);
         try {
             await this.subscriptionService.delete(email);

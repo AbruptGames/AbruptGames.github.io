@@ -1,8 +1,8 @@
-import { Module, forwardRef } from "@nestjs/common";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { Subscription } from "./subscription.entity";
-import { SubscriptionService } from "./subscription.service";
-import { EmailsModule } from "src/emails/emails.module";
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Subscription } from './subscription.entity';
+import { SubscriptionService } from './subscription.service';
+import { EmailsModule } from 'src/emails/emails.module';
 
 @Module({
     imports: [
