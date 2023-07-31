@@ -20,7 +20,7 @@ class HttpService {
     }
 
     async requestAdmin(method: string, url: string, data: object | undefined = undefined) {
-        return this.request(method, url, data, true);
+        return this.request(method, "admin/" + url, data, true);
     }
 
     async request(method: string, url: string, data: object | undefined = undefined, admin = false) {

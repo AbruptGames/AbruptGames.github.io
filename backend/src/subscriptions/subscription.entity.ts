@@ -9,6 +9,9 @@ export class Subscription {
     @IsEmail()
     @Column({ unique: true })
     email: string;
+
+    @Column()
+    newsletter: boolean;
     
     @IsIn(['english', 'french'])
     @Column()

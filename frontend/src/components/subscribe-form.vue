@@ -6,10 +6,10 @@
         <p>
             {{ t("beta-test-text") }}
         </p>
-        <div v-if="!alreadySubscribed" class="newsletter-form">
+        <div class="newsletter-form">
             <label>
                 <span class="checkmark-text">{{ t("newsletter-subscription-checkbox") }}</span>
-                <input type="checkbox" v-model="subscribeToNewsletter" :disabled="isLoading">
+                <input type="checkbox" v-model="newsletter" :disabled="isLoading">
             </label>
             <div class="newsletter-input-and-button">
                 <input class="input-field" type="email" v-model="email" placeholder="Enter your email" required :disabled="isLoading">
@@ -24,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+    import httpService from '@/services/http.service';
+    import { AxiosError } from 'axios';
     import { ref, Ref, computed } from 'vue';
     import { useI18n } from 'vue-i18n';
     
@@ -33,8 +35,7 @@
     const message = ref('');
     const messageType: Ref<"green" | "red"> = ref('green');
     const isLoading = ref(false);
-    const alreadySubscribed = ref(false);
-    const subscribeToNewsletter = ref(true);
+    const newsletter = ref(true);
 
     const messageColor = computed(() => {
         return {
@@ -46,34 +47,21 @@
 
     const subscribeNewsletter = async () => {
         isLoading.value = true;
-        console.log("start call");
         try {
-            const response = await fetch(process.env.VUE_APP_BACKEND_URL + "subscriptions/", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    email: email.value,
-                    language: navigator.language.startsWith("fr") ? "french" : "english"
-                }),
-            });
-            console.log(response);
-        
-            if (!response.ok) {
-                const error = await response.json();
-                if (response.status == 409) {
-                    alreadySubscribed.value = true;
-                }
-                message.value = error.message;
-                messageType.value = "red";
-            } else {
-                const data = await response.json();
-                messageType.value = "green";
-                message.value = `Welcome, ${data.email}! You have successfully subscribed.`;
-                alreadySubscribed.value = true;
+            const body = {
+                email: email.value,
+                language: navigator.language.startsWith("fr") ? "french" : "english",
+                newsletter: newsletter.value
             }
-        } catch (e) {
-            console.log(e);
-            message.value = "An error occured. Please try again later.";
+            const { data } = await httpService.request("POST", "subscribe/", body);
+            messageType.value = "green";
+            message.value = `Welcome, ${data.email}! You have successfully subscribed.`;
+        } catch (e: AxiosError | unknown) {
+            if (e instanceof AxiosError && e.response?.data.message) {
+                message.value = e.response.data.message;
+            } else {
+                message.value = "Unknown error happened"
+            }
             messageType.value = "red";
         } finally {
             isLoading.value = false;

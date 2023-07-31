@@ -31,12 +31,11 @@ export class EmailsService {
     }
 
     private getTemplateName(language: 'english' | 'french'): string {
-        return"welcome-template-" + language;
+        return "welcome-template-" + language;
     }
 
     async getWelcomeEmail(language: 'english' | 'french'): Promise<GetTemplateCommandOutput> {
-        const templateName = this.getTemplateName(language);
-        return this.ses.getTemplate({ TemplateName: templateName });
+        return this.ses.getTemplate({ TemplateName: this.getTemplateName(language) });
     }
 
     async setWelcomeEmail(emailTemplate: EmailTemplate, language: 'english' | 'french'): Promise<CreateTemplateCommandOutput | UpdateTemplateCommandOutput> {
@@ -56,7 +55,7 @@ export class EmailsService {
     }
 
     async sendWelcomeEmail(destination: string, language: 'english' | 'french') {
-        const templateName = language + "-welcome-template";
+        const templateName = this.getTemplateName(language);
         return this.ses.sendTemplatedEmail({
             Source: this.source,
             Destination: { ToAddresses: [destination] },

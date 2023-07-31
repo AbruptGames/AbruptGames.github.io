@@ -5,36 +5,36 @@
             Are you sure you want to unsubscribe from our newsletter?
         </p>
         <p v-else>
-            You have been unsubscribed from our newsletter. Thank you.
+            You have been unsubscribed from our newsletter.
         </p>
         <input v-if="!isUnsubscribed" v-model="email" type="email" placeholder="Enter your email address" />
         <button v-if="!isUnsubscribed" @click="unsubscribe">Unsubscribe</button>
         <p v-if="message">{{ message }}</p>
     </div>
-  </template>
+</template>
   
-  <script setup lang="ts">
-  import { ref } from 'vue';
-  import httpService from '@/services/http.service';
-import { AxiosError } from 'axios';
-  
-  const isUnsubscribed = ref(false);
-  const email = ref('');
-  const message = ref('');
-  
-  const unsubscribe = async () => {
-    try {
-        const result = await httpService.request("DELETE", "subscribe", { email: email.value });
-        isUnsubscribed.value = true;
-        console.log(result)
-    } catch (error: AxiosError | unknown) {
-        if (error instanceof AxiosError) {
-            message.value = error.response?.data.message || error.message;
+<script setup lang="ts">
+    import { ref } from 'vue';
+    import httpService from '@/services/http.service';
+    import { AxiosError } from 'axios';
+    
+    const isUnsubscribed = ref(false);
+    const email = ref('');
+    const message = ref('');
+    
+    const unsubscribe = async () => {
+        try {
+            const result = await httpService.request("DELETE", "subscribe", { email: email.value });
+            isUnsubscribed.value = true;
+            console.log(result)
+        } catch (error: AxiosError | unknown) {
+            if (error instanceof AxiosError) {
+                message.value = error.response?.data.message || error.message;
+            }
+            console.error(error);
         }
-        console.error(error);
-    }
-  };
-  </script>
+    };
+</script>
   
 <style scoped>
     .unsubscribe {

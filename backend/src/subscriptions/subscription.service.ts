@@ -1,4 +1,4 @@
-import { Inject, Injectable, forwardRef } from '@nestjs/common';
+import { HttpException, HttpStatus, Inject, Injectable, forwardRef } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository } from 'typeorm';
 import { Subscription } from './subscription.entity';
@@ -12,17 +12,17 @@ export class SubscriptionService {
         private readonly emailsService: EmailsService,
     ) {}
 
-    async create(email: string, language: 'english' | 'french') {
+    async create(email: string, language: 'english' | 'french', newsletter: boolean) {
         const subscription = new Subscription();
         subscription.email = email;
         subscription.language = language;
-        await validateOrReject(subscription);
-        const output = await this.emailsService.sendWelcomeEmail(email, language);
-        if (output.$metadata.httpStatusCode === 200) {
-            return this.subscriptionRepository.save(subscription);
-        } else {
-            throw new Error(`Error when sending welcome email to : ${email}`);
+        subscription.newsletter = newsletter;
+        if (await this.subscriptionRepository.exist({ where: { email }})) {
+            throw new Error(`${email} is already subscribed`);
         }
+        await validateOrReject(subscription);
+        await this.emailsService.sendWelcomeEmail(email, language);
+        return this.subscriptionRepository.save(subscription);
     }
 
     async delete(email: string) {

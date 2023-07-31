@@ -43,8 +43,8 @@
             <button @click="getWelcomeEmail">Fetch Current Welcome Email</button>
         </div>
         <div class="email-preview">
-            <p v-html="emailTemplate.french.body"></p>
-            <p v-html="emailTemplate.english.body"></p>
+            <div v-html="emailTemplate.french.body"></div>
+            <div v-html="emailTemplate.english.body"></div>
         </div>
     </div>
 </template>
@@ -95,12 +95,12 @@
         };
 
         console.log("sending email to " + testReceiver.value, data);
-        httpService.requestAdmin("POST", "admin/test-email-template", data);
+        httpService.requestAdmin("POST", "test-email-template", data);
     }
 
     const setAsWelcomeEmail = async () => {
         try {
-            await httpService.requestAdmin("POST", "admin/set-welcome-email", { emailTemplate: emailTemplate.value });
+            await httpService.requestAdmin("POST", "set-welcome-email", { emailTemplate: emailTemplate.value });
         } catch (error: AxiosError | unknown) {
             if (error instanceof AxiosError) {
                 console.error(error.response?.data.message || error.message || error);
@@ -111,7 +111,7 @@
     }
 
     const getWelcomeEmail = async () => {
-        const res = await httpService.request("GET", "admin/welcome-email-template");
+        const res = await httpService.request("GET", "welcome-email-template");
         emailTemplate.value = res.data;
     }
 
@@ -121,7 +121,7 @@
 
     const listTemplates = async () => {
         try {
-            const res = await httpService.requestAdmin("GET", "admin/templates");
+            const res = await httpService.requestAdmin("GET", "templates");
             savedTemplates.value = res.data;
         } catch (error) {
             print_error(error)
@@ -130,7 +130,7 @@
 
     const getTemplate = async (templateName: string) => {
         try {
-            const res = await httpService.requestAdmin("GET", "admin/templates/" + templateName);
+            const res = await httpService.requestAdmin("GET", "templates/" + templateName);
             emailTemplate.value = res.data;
         } catch (error) {
             print_error(error)
@@ -139,7 +139,7 @@
 
     const setTemplate = async (templateName: string) => {
         try {
-            await httpService.requestAdmin("POST", "admin/templates/" + templateName, { template: emailTemplate.value });
+            await httpService.requestAdmin("POST", "templates/" + templateName, { template: emailTemplate.value });
         } catch (error) {
             print_error(error)
         }
@@ -235,9 +235,6 @@
 }
 
 .email-preview p {
-    width: 100%;
-    height: 400px;
     text-align: left;
-    padding: 25px;
 }
 </style>
