@@ -297,6 +297,7 @@
     .main-title img {
         margin-top: 160px;
         width: 70vw;
+        max-width: 2000px;
         height: auto;
     }
 
@@ -446,6 +447,7 @@
         display: flex;
         padding: 125px 50px 75px 50px;
         width: 50%;
+        max-width: 1500px;
         aspect-ratio: 16/9;
     }
 
