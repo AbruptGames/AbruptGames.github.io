@@ -36,13 +36,13 @@
                     {{ t("community-title") }}
                 </h2>
                 <div class="social-links">
-                    <a href="http://discord.gg/zCHVCb5fGH" target="_blank"><img src="../assets/icons/community/discord.png">
+                    <a href="http://www.discord.gg/zCHVCb5fGH" target="_blank"><img src="../assets/icons/community/discord.png">
                         <span>{{ t("join-discord") }}</span>
                     </a>
-                    <a href="https://twitter.com/AbruptGames" target="_blank"><img src="../assets/icons/community/twitter.png">
+                    <a href="https://www.twitter.com/AbruptGames" target="_blank"><img src="../assets/icons/community/twitter.png">
                         <span>{{ t("join-twitter") }}</span>
                     </a>
-                    <a href="https://youtube.com/" target="_blank"><img src="../assets/icons/community/youtube.png">
+                    <a href="https://www.youtube.com/@abruptgames?sub_confirmation=1" target="_blank"><img src="../assets/icons/community/youtube.png">
                         <span>{{ t("join-youtube") }}</span>
                     </a>
                 </div>
@@ -59,7 +59,7 @@
                     </p>
                 </div>
                 <div class="steam-right">
-                    <a class="steam-button" href="https://steam.com/" target="_blank"><img src="../assets/icons/community/youtube.png">
+                    <a class="steam-button" href="https://store.steampowered.com/app/2138820/Abrupt_Valley" target="_blank"><img src="../assets/icons/community/steam.png">
                         <span>{{ t("steam-button") }}</span>
                     </a>
                 </div>
