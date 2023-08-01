@@ -1,10 +1,12 @@
 {
     "community-button": "Communauté",
+    "trailer-button": "Vidéo",
     "overview-button": "Aperçu",
     "about-us-button": "À propos",
     "beta-test-title": "Devenez un beta testeur",
     "beta-test-text": "Devenez un beta testeur pour recevoir un e-mail avec une clé de jeu lorsque la version bêta sera publiée. Abonnez-vous à notre newsletter pour obtenir les dernières actualités sur le jeu.",
     "newsletter-subscription-checkbox": "S'inscrire a la newsletter",
+    "watch-trailer": "Regarder le trailer",
     "community-title": "Rejoignez la communauté",
     "join-discord": "Rejoignez notre serveur Discord",
     "join-twitter": "Suivez-nous sur Twitter",
@@ -17,6 +19,6 @@
     "overview-ladder-text": "Affrontez des adversaires du monde entier ou entraînez-vous contre une IA pour apprendre le jeu. Devenez le meilleur joueur et grimpez dans le classement. Devenez le véritable roi de la Vallée Abrupte.",
     "about-us-title": "À propos de nous",
     "about-us-text": "Nous sommes une petite équipe de développeurs passionnés qui souhaitent créer le meilleur jeu de stratégie. Nous travaillons dur pour faire de ce jeu le meilleur possible. Nous sommes ouverts à tous les commentaires et suggestions pour améliorer le jeu.",
-    "krun-title": "PDG",
-    "obsi-title": "Développeur Principal"
+    "krun-title": "Développeur",
+    "obsi-title": "Développeur"
   }

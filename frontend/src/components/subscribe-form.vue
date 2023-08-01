@@ -73,18 +73,26 @@
 
     .newsletter {
         width: 100%;
-        margin: auto;
         gap: 20px;
     }
 
     .newsletter h2 {
         margin-top: 0;
+        color: var(--text-color-title-black);
+    }
+
+    .newsletter p {
+        color: var(--text-color-black);
     }
 
     .newsletter-form {
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+
+    .newsletter-form input[type="checkbox"] {
+        accent-color: #34a0a4;
     }
 
     .newsletter-form p {
@@ -101,26 +109,39 @@
     .newsletter-input-and-button input {
         font-family: "SugoPro";
         flex: 1 0 auto;
-        padding: 10px;
-        width: 300px;
-        font-size: 16px;
+        padding: 8px;
+        max-width: 300px;
+        font-size: 1rem;
         outline: none;
+        background-color: initial;
+        border-color: var(--text-color-title-black);
+        color: var(--text-color-title-black);
+        border-width: 2px;
+        border-style: solid;
+        border-image: none;
+    }
+
+    .newsletter-input-and-button input::placeholder {
+        color: var(--text-color-title-black);
     }
 
     .newsletter button {
         font-family: "SugoPro";
-        color: #fff;
-        background-color: #007bff;
-        border: none;
+        color: var(--text-color-title-black);
+        background-color: initial;
+        border-color: var(--text-color-title-black);
+        border-width: 2px;
+        border-style: solid;
+        border-image: none;
         cursor: pointer;
         outline: none;
-        padding: 10px 20px;
-        font-size: 20px;
-        transition: background-color 0.2s ease;
+        padding: 3.5px 20px;
+        font-size: 1.5rem;
+        transition: transform 0.2s ease;
     }
 
     .newsletter button:hover {
-        background-color: #0056b3;
+        transform: scale(1.1);
     }
 
     .green {
