@@ -29,67 +29,79 @@
                 <img src="../assets/background-3.png">
             </div>
         </div>
-        <div class="background">
-            <div class="section community-section" id="community">
-                <subscribeForm></subscribeForm>
-                <div class="community">
+        <div class="section community-section" id="community">
+            <subscribeForm></subscribeForm>
+            <div class="community">
+                <h2 class="sc">
+                    {{ t("community-title") }}
+                </h2>
+                <div class="social-links">
+                    <a href="http://discord.gg/zCHVCb5fGH" target="_blank"><img src="../assets/icons/community/discord.png">
+                        <span>{{ t("join-discord") }}</span>
+                    </a>
+                    <a href="https://twitter.com/AbruptGames" target="_blank"><img src="../assets/icons/community/twitter.png">
+                        <span>{{ t("join-twitter") }}</span>
+                    </a>
+                    <a href="https://youtube.com/" target="_blank"><img src="../assets/icons/community/youtube.png">
+                        <span>{{ t("join-youtube") }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section steam-section" id="steam">
+            <div class="steam">
+                <div class="steam-left">
                     <h2 class="sc">
-                        {{ t("community-title") }}
+                        {{ t("steam-title") }}
                     </h2>
-                    <div class="social-links">
-                        <a href="http://discord.gg/zCHVCb5fGH" target="_blank"><img src="../assets/icons/community/discord.png" height="30" width="30">
-                            <span>{{ t("join-discord") }}</span>
-                        </a>
-                        <a href="https://twitter.com/AbruptGames" target="_blank"><img src="../assets/icons/community/twitter.png" height="30" width="30">
-                            <span>{{ t("join-twitter") }}</span>
-                        </a>
-                        <a href="https://youtube.com/" target="_blank"><img src="../assets/icons/community/youtube.png" height="30" width="30">
-                            <span>{{ t("join-youtube") }}</span>
-                        </a>
-                    </div>
+                    <p>
+                        {{ t("steam-text") }}
+                    </p>
+                </div>
+                <div class="steam-right">
+                    <a class="steam-button" href="https://steam.com/" target="_blank"><img src="../assets/icons/community/youtube.png">
+                        <span>{{ t("steam-button") }}</span>
+                    </a>
                 </div>
             </div>
-
-            <img class="forest-splitter" src="../assets/forest-splitter.png">
-            <div class="section trailer-section" id="trailer">
-                <div class="trailer">
-                    <iframe class="trailer-video" src="https://youtube.com/embed/f1uKQFi5_uI?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="section trailer-section" id="trailer">
+            <div class="trailer">
+                <iframe class="trailer-video" src="https://youtube.com/embed/f1uKQFi5_uI?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="section overview-section" id="overview">
+            <div class="overview-box image-right">
+                <div class="overview-element">
+                    <h2 class="section-title sc">{{ t("overview-city-title") }}</h2>
+                    <p>
+                        {{ t("overview-city-text") }}
+                    </p>
+                </div>
+                <div class="overview-element image-container">
+                    <img src="../assets/screenshots/ScreenCity.png"/>
                 </div>
             </div>
-
-            <div class="section" id="overview">
-                <div class="overview-box image-right">
-                    <div class="overview-element">
-                        <h2 class="section-title sc">{{ t("overview-city-title") }}</h2>
-                        <p>
-                            {{ t("overview-city-text") }}
-                        </p>
-                    </div>
-                    <div class="overview-element image-container">
-                        <img src="../assets/screenshots/ScreenCity.png"/>
-                    </div>
+            <div class="overview-box image-left">
+                <div class="overview-element image-container">
+                    <img src="../assets/screenshots/ScreenBattle.png"/>
                 </div>
-                <div class="overview-box image-left">
-                    <div class="overview-element image-container">
-                        <img src="../assets/screenshots/ScreenBattle.png"/>
-                    </div>
-                    <div class="overview-element">
-                        <h2 class="section-title sc">{{ t("overview-army-title") }}</h2>
-                        <p>
-                            {{ t("overview-army-text") }}
-                        </p>
-                    </div>
+                <div class="overview-element">
+                    <h2 class="section-title sc">{{ t("overview-army-title") }}</h2>
+                    <p>
+                        {{ t("overview-army-text") }}
+                    </p>
                 </div>
-                <div class="overview-box image-right">
-                    <div class="overview-element">
-                        <h2 class="section-title sc">{{ t("overview-ladder-title") }}</h2>
-                        <p>
-                            {{ t("overview-ladder-text") }}
-                        </p>
-                    </div>
-                    <div class="overview-element image-container">
-                        <img src="../assets/screenshots/ScreenThrone.png"/>
-                    </div>
+            </div>
+            <div class="overview-box image-right">
+                <div class="overview-element">
+                    <h2 class="section-title sc">{{ t("overview-ladder-title") }}</h2>
+                    <p>
+                        {{ t("overview-ladder-text") }}
+                    </p>
+                </div>
+                <div class="overview-element image-container">
+                    <img src="../assets/screenshots/ScreenThrone.png"/>
                 </div>
             </div>
         </div>
@@ -304,11 +316,6 @@
     /******** BACKGROUND ********/
     /****************************/
 
-    .background {
-        margin-top: -40px;
-        background-image: url('../assets/main-background.png');
-    }
-
     .section {
         padding: 5vh 5vw;
         scroll-margin-top: 60px;
@@ -319,6 +326,10 @@
     /**************************/
 
     .community-section {
+        margin-top: -40px;
+        padding-bottom: 50px;
+        background-image: url('../assets/communityBackground.png');
+
         padding-top: 80px;
         display: flex;
         flex-direction: row;
@@ -329,6 +340,7 @@
     @media (max-width: 800px) {
         .community-section {
             flex-direction: column;
+            text-align: center;
         }
     }
 
@@ -342,6 +354,11 @@
         max-width: 500px;
     }
 
+    .community-section .social-links img {
+        width: 30px;
+        height: 30px;
+    }
+
     .community-section .social-links a {
         padding-left: 20px;
         font-size: 1.25rem;
@@ -349,29 +366,96 @@
         align-items: center;
         gap: 10px;
     }
+    
+    /**************************/
+    /******** STEAM *********/
+    /**************************/
+
+    .steam-section {
+        margin-top: -50px;
+        background-image: url('../assets/steamBackground.png');
+
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .steam {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 50px 75px 50px;
+        gap: 30px;
+        text-align: left;
+    }
+
+    .steam-left {
+        display: flex;
+        flex: 2;
+        flex-direction: column;
+    }
+
+    @media (max-width: 800px) {
+
+        .steam {
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        .steam-left {
+            text-align: center;
+        }
+    }
+
+    .steam-section img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .steam-right {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .steam-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 8px 20px;
+        font-size: 1.25rem;
+        border: solid var(--text-color-title-black) 2px;
+    }
+
 
     /**************************/
     /******** TRAILER *********/
     /**************************/
 
-    #trailer {
+    .trailer-section {
+        margin-top: -100px;
+        background-image: url('../assets/trailerBackground.png');
+
         display: flex;
         justify-content: space-around;
-        background-color: #34a0a4;
-    }
-
-    .forest-splitter {
-        width: 1920px;
-        height: auto;
-        margin-bottom: -32px;
-
     }
 
     .trailer {
         display: flex;
-        padding: 25px 50px;
-        width: 33%;
+        padding: 125px 50px 75px 50px;
+        width: 50%;
         aspect-ratio: 16/9;
+    }
+
+    @media (max-width: 800px) {
+        .trailer {
+            display: flex;
+            padding: 125px 50px 100px 50px;
+            width: 75%;
+            aspect-ratio: 16/9;
+        }
     }
 
     .trailer-video {
@@ -383,8 +467,15 @@
     /********* OVERVIEW *********/
     /****************************/
 
+    .overview-section {
+        margin-top: -75px;
+        padding-top: 150px;
+        background-image: url('../assets/overviewBackground.png');
+    }
+
     .overview-box {
         display: flex;
+        justify-content: center;
         align-items: center;
         padding: 40px 0;
         margin: auto;
@@ -446,7 +537,10 @@
     /**************************/
 
     .about-us {
-        background-color: var(--background-color-topbar);
+        margin-top: -55px;
+        padding-top: 55px;
+        background-image: url('../assets/aboutUsBackground.png');
+
         font-size: 1.25rem;
     }
 
@@ -524,7 +618,9 @@
     /***************************/
 
     .bottom-bar {
+        margin-top: -20px;;
         background-color: #262626;
+
         color: var(--text-color-white);
         height: 60px;
         width: 100%;

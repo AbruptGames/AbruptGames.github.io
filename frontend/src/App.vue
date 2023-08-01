@@ -38,10 +38,12 @@ body, html {
 
 h2 {
     font-weight: normal;
+    font-size: 2.5rem;
     color: var(--text-color-title-black);
 }
 
 p {
+    font-size: 1.25rem;
     color: var(--text-color-black);
 }
 

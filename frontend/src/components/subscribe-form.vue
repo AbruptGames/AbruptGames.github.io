@@ -125,6 +125,12 @@
         color: var(--text-color-title-black);
     }
 
+    @media (max-width: 800px) {
+        .newsletter-input-and-button {
+            justify-content: center;
+        }
+    }
+
     .newsletter button {
         font-family: "SugoPro";
         color: var(--text-color-title-black);
