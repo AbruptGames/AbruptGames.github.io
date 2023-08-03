@@ -220,6 +220,10 @@
         gap: 20px;
     }
 
+    .top-bar .social-links a {
+        display: flex;
+    }
+
     .top-bar .social-links img {
         height: 30px;
         border-radius: 0;
