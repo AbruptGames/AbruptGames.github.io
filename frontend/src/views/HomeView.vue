@@ -133,17 +133,16 @@
             </div>
         </div>
         <div class="bottom-bar">
-            <div>
+            <div class="left">
                 Copyright @2023 Abrupt Games. All right reserved
             </div>
 
             <div class="legal-stuff">
-                <a href="" target="_blank"> Privacy Policy </a> |
-                <a href="" target="_blank"> Cookies </a> |
-                <a href="" target="_blank"> Terms of Service </a>
+                <a href="privacy-policy" target="_blank"> Privacy Policy </a> |
+                <a href="terms-of-service" target="_blank"> Terms of Service </a>
             </div>
             
-            <div class="languages">
+            <div class="languages right">
                 <img src="./../assets/icons/languages/france.png" @click="changeLanguage('fr')" height="20">
                 <img src="./../assets/icons/languages/united-kingdom.png" @click="changeLanguage('en')" height="20">
             </div>
@@ -637,8 +636,21 @@
     }
 
     .bottom-bar .legal-stuff {
-        display: flex;
         gap: 10px;
+    }
+
+    .bottom-bar div {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .bottom-bar .left {
+        justify-content: left;
+    }
+
+    .bottom-bar .right {
+        justify-content: right;
     }
 
     .bottom-bar a {
