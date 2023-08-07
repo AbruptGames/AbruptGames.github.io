@@ -12,10 +12,10 @@
                 <input type="checkbox" v-model="newsletter" :disabled="isLoading">
             </label>
             <div class="newsletter-input-and-button">
-                <input class="input-field" type="email" v-model="email" placeholder="Enter your email" required :disabled="isLoading">
+                <input class="input-field" type="email" v-model="email" v-bind:placeholder="t('beta-test-email')" required :disabled="isLoading">
                 <button type="submit" :disabled="isLoading">
                     <span v-if="isLoading">⌛</span>
-                    <span v-else>Join</span>
+                    <span v-else>{{ t("beta-test-button") }}</span>
                 </button>
             </div>
             <p>{{ message }}</p>
