@@ -67,7 +67,7 @@
         </div>
         <div class="section trailer-section" id="trailer">
             <div class="trailer">
-                <iframe class="trailer-video" src="https://youtube.com/embed/f1uKQFi5_uI?rel=0" frameborder="0" allowfullscreen></iframe>
+                <iframe class="trailer-video" src="https://youtube.com/embed/2YOgAxqT7VA?rel=0" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="section overview-section" id="overview">

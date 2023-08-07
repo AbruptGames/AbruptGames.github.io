@@ -1,5 +1,4 @@
-import { Module, forwardRef } from "@nestjs/common";
-import { SubscriptionModule } from "src/subscriptions/subscription.module";
+import { Module } from "@nestjs/common";
 import { EmailsService } from "./emails.service";
 import { GameKeyService } from "src/emails/gameKey.service";
 

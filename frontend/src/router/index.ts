@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import AdminView from '../views/AdminView.vue';
 import UnsubscribeView from '../views/UnsubscribeView.vue';
 import PrivacyPolicyView from '../views/PrivacyPolicyView.vue';
 import TermsOfServiceView from '../views/TermsOfServiceView.vue';
@@ -11,11 +10,11 @@ const routes: Array<RouteRecordRaw> = [
         name: "home",
         component: HomeView,
     },
-    {
-        path: "/admin",
-        name: "admin",
-        component: AdminView,
-    },
+    // {
+    //     path: "/admin",
+    //     name: "admin",
+    //     component: AdminView,
+    // },
     {
         path: "/unsubscribe",
         name: "unsubscribe",

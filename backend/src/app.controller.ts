@@ -1,19 +1,19 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Delete, Res, NotFoundException } from '@nestjs/common';
-import { SubscriptionService } from './subscriptions/subscription.service';
+import { Controller, Post, Body, HttpException, HttpStatus, Delete, NotFoundException } from '@nestjs/common';
 import { QueryFailedError } from 'typeorm/error/QueryFailedError';
-import { AWSError } from 'aws-sdk';
-
+import { EmailsModule } from './emails/emails.module';
+import { EmailsService } from './emails/emails.service';
 @Controller()
 export class AppController {
     constructor(
-        private readonly subscriptionService: SubscriptionService
+        private readonly emailsService: EmailsService
     ) {}
 
     @Post("subscribe")
     async create(@Body('email') email: string, @Body('language') language: 'french' | 'english', @Body("newsletter") newsletter: boolean) {
         try {
-            return await this.subscriptionService.create(email, language, newsletter);
-        } catch (error: QueryFailedError | AWSError | unknown) {
+            console.log("Subscribing");
+            return await this.emailsService.createOrAddContact(email, language, newsletter);
+        } catch (error: QueryFailedError | unknown) {
             console.log(error);
             if (error instanceof QueryFailedError) {
                 throw new HttpException(`Database Error: ${error.message}`, HttpStatus.BAD_REQUEST);
@@ -30,7 +30,7 @@ export class AppController {
     async delete(@Body('email') email: string) {
         console.log("unsubscribing " + email);
         try {
-            await this.subscriptionService.delete(email);
+            await this.emailsService.removeContact(email);
             return "Unsubscribed successfully";
         } catch (error) {
             throw new NotFoundException(`${email} is not subscribed`);

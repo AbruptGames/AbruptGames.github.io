@@ -18,51 +18,34 @@
                     <span v-else>Join</span>
                 </button>
             </div>
-            <p :class="messageColor">{{ message }}</p>
+            <p>{{ message }}</p>
         </div>
     </form>
 </template>
 
 <script setup lang="ts">
     import httpService from '@/services/http.service';
-    import { AxiosError } from 'axios';
-    import { ref, Ref, computed } from 'vue';
+    import { ref } from 'vue';
     import { useI18n } from 'vue-i18n';
     
-    const { t } = useI18n();
+    const { t, locale } = useI18n();
     
     const email = ref('');
     const message = ref('');
-    const messageType: Ref<"green" | "red"> = ref('green');
     const isLoading = ref(false);
     const newsletter = ref(true);
-
-    const messageColor = computed(() => {
-        return {
-            active: true,
-            "green": messageType.value === "green",
-            "red": messageType.value === "red",
-        }
-    });
 
     const subscribeNewsletter = async () => {
         isLoading.value = true;
         try {
             const body = {
                 email: email.value,
-                language: navigator.language.startsWith("fr") ? "french" : "english",
+                language: locale.value == "en" ? "english" : "french",
                 newsletter: newsletter.value
             }
-            const { data } = await httpService.request("POST", "subscribe/", body);
-            messageType.value = "green";
-            message.value = `Welcome, ${data.email}! You have successfully subscribed.`;
-        } catch (e: AxiosError | unknown) {
-            if (e instanceof AxiosError && e.response?.data.message) {
-                message.value = e.response.data.message;
-            } else {
-                message.value = "Unknown error happened"
-            }
-            messageType.value = "red";
+            await httpService.request("POST", "subscribe/", body);
+        } catch (e) {
+            console.error(e)
         } finally {
             isLoading.value = false;
         }
@@ -149,14 +132,5 @@
     .newsletter button:hover {
         transform: scale(1.1);
     }
-
-    .green {
-        color: green;
-    }
-
-    .red {
-        color: red;
-    }
-
 
 </style>

@@ -24,9 +24,9 @@
     
     const unsubscribe = async () => {
         try {
-            const result = await httpService.request("DELETE", "subscribe", { email: email.value });
+            await httpService.request("DELETE", "subscribe", { email: email.value });
             isUnsubscribed.value = true;
-            console.log(result)
+            message.value = "";
         } catch (error: AxiosError | unknown) {
             if (error instanceof AxiosError) {
                 message.value = error.response?.data.message || error.message;
