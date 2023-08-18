@@ -24,7 +24,7 @@ async function bootstrap() {
   app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    const allowedOrigins = ['https://www.abruptgames.fr:403', 'https://abruptgames.fr:403', 'https://www.abruptgames.fr:3000', 'https://abruptgames.fr:3000'];
+    const allowedOrigins = ['https://www.abruptgames.fr:403', 'https://www.abruptgames.fr'];
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
