@@ -35,9 +35,6 @@ export class EmailsService {
         };
         try {
             const [response, body] = await sendgridClient.request(request);
-            console.log(response.statusCode);
-            console.log(body);
-            console.log("Sending welcome email");
             const mailData: sendGridMail.MailDataRequired = {
                 to: email,
                 from: this.source,
@@ -59,11 +56,8 @@ export class EmailsService {
         };
         try {
             const [response, body] = await sendgridClient.request(request);
-            console.log(response.statusCode);
-            console.log(body);
             return body.result;
         } catch (e) {
-            console.log(e);
         }
     }
 
