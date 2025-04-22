@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+}
+
+.main {
+    margin: 100px;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+a {
+    text-decoration: underline;
+    color: blue;
+}
